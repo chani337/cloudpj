@@ -1,14 +1,14 @@
-# 📝 오늘의 기분 다이어리 (Mood Diary)
+# 오늘의 기분 다이어리 (Mood Diary)
 
 React, Spring Boot, FastAPI, MySQL 및 클라우드 가상 네트워크(VPC) 인프라 기반의 **AI 감정 분석 일기 서비스**입니다.
 
 ---
 
-## 🚀 1. 프로젝트 개요 (Project Overview)
+## 1. 프로젝트 개요 (Project Overview)
 
 "오늘의 기분 다이어리"는 사용자가 작성한 일기 내용을 AI 감정 분석 모델(FastAPI)이 실시간 분석하여 감정 상태(기쁨, 슬픔, 분노 등)와 이모지, 맞춤 코멘트를 생성하고, 백엔드(Spring Boot) 및 데이터베이스(MySQL)에 저장하여 관리하는 풀스택 웹 애플리케이션입니다.
 
-### 🛠️ 기술 스택 (Tech Stack)
+### 기술 스택 (Tech Stack)
 
 | 구분 | 기술 스택 | 설명 |
 |---|---|---|
@@ -20,7 +20,7 @@ React, Spring Boot, FastAPI, MySQL 및 클라우드 가상 네트워크(VPC) 인
 
 ---
 
-## 📁 2. 프로젝트 디렉터리 구조 (Directory Structure)
+## 2. 프로젝트 디렉터리 구조 (Directory Structure)
 
 ```text
 cloudproject/
@@ -51,7 +51,7 @@ cloudproject/
 
 ---
 
-## ☁️ 3. 클라우드 아키텍처 (Cloud Architecture)
+## 3. 클라우드 아키텍처 (Cloud Architecture)
 
 ```text
 [ 사용자 (User Client) ]
@@ -84,7 +84,7 @@ cloudproject/
 
 ---
 
-## 🔒 4. 클라우드 네트워크 및 ACG 보안 그룹 설정 (Network & Security)
+## 4. 클라우드 네트워크 및 ACG 보안 그룹 설정 (Network & Security)
 
 ### 🖥️ 4-1. VPC 및 서브넷 구획 정의
 - **VPC 이름**: `mood-vpc` (`10.0.0.0/16`)
@@ -101,7 +101,7 @@ cloudproject/
 
 ---
 
-### 🛡️ 4-3. ACG (Access Control Group) 규칙 명세
+### 4-3. ACG (Access Control Group) 규칙 명세
 
 #### 1) Web Server ACG (`mood-web-acg`)
 - **대상 서버**: `mood-web-srv` (Public Subnet)
@@ -134,7 +134,7 @@ cloudproject/
 
 ---
 
-## ⚡ 5. 서비스 실행 방법 (Execution)
+## 5. 서비스 실행 방법 (Execution)
 
 ### 5-1. 환경 변수 구성
 `.env.example` 파일을 복사하여 환경 변수 파일 생성:
@@ -160,7 +160,7 @@ docker compose -f docker-compose.dev.yml up --build
 
 ---
 
-## 📡 6. API 명세 (API Reference)
+## 6. API 명세 (API Reference)
 
 ### 백엔드 REST API (`Spring Boot`)
 | Method | Endpoint | Description |
