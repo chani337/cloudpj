@@ -86,12 +86,12 @@ cloudproject/
 
 ## 4. 클라우드 네트워크 및 ACG 보안 그룹 설정 (Network & Security)
 
-### 🖥️ 4-1. VPC 및 서브넷 구획 정의
+### 4-1. VPC 및 서브넷 구획 정의
 - **VPC 이름**: `mood-vpc` (`10.0.0.0/16`)
 - **Public Subnet**: `mood-public-subnet` (`10.0.1.0/24`) — 외부 인터넷 트래픽을 수신하며 Nginx 기반 Web Server 배치
 - **Private Subnet**: `mood-private-subnet` (`10.0.2.0/24`) — 외부에서 직접 접근할 수 없는 비공개 망으로 Application 및 Database 배치
 
-### 🖥️ 4-2. 서버 사양 및 배치 명세 (Server List)
+### 4-2. 서버 사양 및 배치 명세 (Server List)
 
 | 서버 이름 (Server Name) | 배치 서브넷 (Subnet) | 역할 (Role) | 탑재 서비스 (Service) | IP 바인딩 (IP Assignment) |
 |---|---|---|---|---|
