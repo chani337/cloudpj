@@ -2,16 +2,16 @@ package com.cloudclass.mood.controller;
 
 import com.cloudclass.mood.domain.DiaryEntry;
 import com.cloudclass.mood.dto.DiaryRequest;
+import com.cloudclass.mood.dto.ModelAnalyzeRequest;
 import com.cloudclass.mood.dto.ModelAnalyzeResponse;
 import com.cloudclass.mood.repository.DiaryEntryRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClient;
-import org.springframework.http.MediaType;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/diary")
@@ -32,7 +32,7 @@ public class DiaryController {
         ModelAnalyzeResponse analyzed = modelRestClient.post()
                 .uri("/analyze")
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(Map.of("text", request.content()))
+                .body(new ModelAnalyzeRequest(request.content()))
                 .retrieve()
                 .body(ModelAnalyzeResponse.class);
 
