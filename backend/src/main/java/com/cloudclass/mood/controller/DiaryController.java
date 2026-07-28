@@ -46,16 +46,6 @@ public class DiaryController {
         return diaryEntryRepository.save(entry);
     }
 
-        // 2) 결과를 합쳐서 DB에 저장
-        DiaryEntry entry = new DiaryEntry(request.content());
-        entry.setMood(analyzed.mood());
-        entry.setEmoji(analyzed.emoji());
-        entry.setScore(analyzed.score());
-        entry.setComment(analyzed.comment());
-
-        return diaryEntryRepository.save(entry);
-    }
-
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         diaryEntryRepository.deleteById(id);
