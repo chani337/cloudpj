@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClient;
+import org.springframework.http.MediaType;
 
 import java.util.List;
 import java.util.Map;
@@ -30,9 +31,20 @@ public class DiaryController {
         // 1) FastAPI 모델 서비스에 기분 분석 요청
         ModelAnalyzeResponse analyzed = modelRestClient.post()
                 .uri("/analyze")
+                .contentType(MediaType.APPLICATION_JSON)
                 .body(Map.of("text", request.content()))
                 .retrieve()
                 .body(ModelAnalyzeResponse.class);
+
+        // 2) 결과를 합쳐서 DB에 저장
+        DiaryEntry entry = new DiaryEntry(request.content());
+        entry.setMood(analyzed.mood());
+        entry.setEmoji(analyzed.emoji());
+        entry.setScore(analyzed.score());
+        entry.setComment(analyzed.comment());
+
+        return diaryEntryRepository.save(entry);
+    }
 
         // 2) 결과를 합쳐서 DB에 저장
         DiaryEntry entry = new DiaryEntry(request.content());
