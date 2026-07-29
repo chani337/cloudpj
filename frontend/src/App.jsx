@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <div className="page">
-      <h1>오늘의 기분 다이어리 CI/CD 완성?📓</h1>
+      <h1>오늘의 기분 다이어리 CI/CD 완성?!📓</h1>
       <p className="subtitle">
         한 줄만 적으면 AI(mood-model)가 오늘의 기분을 분석해줘요.
       </p>
